@@ -259,9 +259,9 @@ int main(int argc, char *argv[])
 
   printf("device=%s\n", Param.device);
 
-  printf("++++++++++++++++++++++++++++++++++++++++\ n");
+  printf("++++++++++++++++++++++++++++++++++++++++\n");
   show_ifreq(Param.device);
-  printf("++++++++++++++++++++++++++++++++++++++++\ n");
+  printf("++++++++++++++++++++++++++++++++++++++++\n");
 
   printf("vmac=%s\n", my_ether_ntoa_r(Param.vmac, buf1));
 
