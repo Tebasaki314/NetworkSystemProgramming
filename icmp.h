@@ -1,4 +1,4 @@
-int print_imcp(struct icmp *icmp);
+int print_icmp(struct icmp *icmp);
 int IcmpSendEchoReply(int soc, struct ip *r_ip, struct icmp *r_icmp, u_int8_t *data, int len, int ip_ttl);
 int IcmpSendEcho(int soc, struct in_addr *daddr, int seqNo, int size);
 int PingSend(int soc, struct in_addr *daddr, int size);

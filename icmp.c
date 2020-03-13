@@ -25,7 +25,7 @@ typedef struct
 
 PING_DATA PingData[PING_SEND_NO];
 
-int print_imcp(struct icmp *icmp)
+int print_icmp(struct icmp *icmp)
 {
   static char *icmp_type[] = {
       "Echo Reply",
@@ -128,7 +128,7 @@ int IcmpSendEcho(int soc, struct in_addr *daddr, int seqNo, int size)
     ptr++;
   }
 
-  icmp->icmp_cksum = checksum((u_int8_t)sbuf, ptr - sbuf);
+  icmp->icmp_cksum = checksum((u_int8_t *)sbuf, ptr - sbuf);
 
   printf("=== ICMP echo ===[\n");
 
@@ -179,7 +179,7 @@ int IcmpRecv(int soc, u_int8_t *raw, int raw_len, struct ether_header *eh, struc
     print_ether_header(eh);
     print_ip(ip);
     print_icmp(icmp);
-    ptirnf("]\n");
+    printf("]\n");
     if (icmp->icmp_type == ICMP_ECHO)
     {
       IcmpSendEchoReply(soc, ip, icmp, ptr, len, Param.IpTTL);

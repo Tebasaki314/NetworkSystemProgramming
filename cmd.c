@@ -105,14 +105,10 @@ int DoCmdIfconfig(char **cmdline)
   return (0);
 }
 
-int DoCmdNetStat(char **cmdline)
+int DoCmdEnd(char **cmdline)
 {
   kill(getpid(), SIGTERM);
   return (0);
-}
-
-int DoCmdEnd(char **cmdline)
-{
 }
 
 int DoCmd(char *cmd)
